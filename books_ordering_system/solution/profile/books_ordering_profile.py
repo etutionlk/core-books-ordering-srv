@@ -27,7 +27,7 @@ class BookOrderingServiceAzureProfile(BookOrderingProfile):
         self.books_registry = BooksOrderingRegistry(
             books_data_store=DataStoreSP(db_connection_str="connection-str-to-db", ssl_cert_path="/your/cert/path1"),
             storage_service=AzureBlobStorageServiceSP(connection_str="azure-storage-service-connection-string"),
-            third_party_api=TPAPIServiceSP(api_endpoint="http://third-party-api-endpoint1"))
+            third_party_api=TPAPIServiceSP(api_endpoint="http://tps-api-endpoint1"))
 
     def get_profile_name(self):
         return "az_books_ordering_service"
@@ -43,7 +43,7 @@ class BookOrderingServiceAWSProfile(BookOrderingProfile):
         self.books_registry = BooksOrderingRegistry(
             books_data_store=DataStoreSP(db_connection_str="connection-str-to-db", ssl_cert_path="/your/cert/path2"),
             storage_service=AWSS3StorageServiceSP(connection_str="aws-storage-service-connection-string"),
-            third_party_api=TPAPIServiceSP(api_endpoint="http://third-party-api-endpoint2"))
+            third_party_api=TPAPIServiceSP(api_endpoint="http://tp-party-api-endpoint2"))
 
     def get_profile_name(self):
         return "aws_books_ordering_service"
